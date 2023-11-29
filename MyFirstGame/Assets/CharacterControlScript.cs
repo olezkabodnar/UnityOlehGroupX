@@ -32,6 +32,16 @@ public class CharacterControlScript : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         { transform.Rotate(Vector3.up, rateOfRotation * Time.deltaTime); };
         transform.position += velocity * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        { transform.Rotate(Vector3.forward, rateOfRotation * Time.deltaTime); };
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        { transform.Rotate(Vector3.right, rateOfRotation * Time.deltaTime); }
+
+        transform.position += velocity * Time.deltaTime;
+
+
         velocity += acceleration * Time.deltaTime;
     }
 }
