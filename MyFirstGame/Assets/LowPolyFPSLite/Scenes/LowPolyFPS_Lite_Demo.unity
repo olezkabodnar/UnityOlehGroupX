@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44169, g: 0.490591, b: 0.5705778, a: 1}
+  m_IndirectSpecularColor: {r: 0.17658089, g: 0.22102123, b: 0.30333114, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3164,6 +3164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ebee87fe82061346b82ccf5e49f8fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
+  mouseSensitivity: 15
 --- !u!54 &1029021124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4781,6 +4783,7 @@ GameObject:
   - component: {fileID: 1661366753}
   - component: {fileID: 1661366752}
   - component: {fileID: 1661366751}
+  - component: {fileID: 1661366756}
   - component: {fileID: 1661366750}
   m_Layer: 0
   m_Name: Character
@@ -4796,7 +4799,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661366749}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dcf1a9cfc31d874e99f38f353a902f9, type: 3}
   m_Name: 
@@ -4855,7 +4858,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c2a7a3006db1df48b06fed4222a5f52, type: 2}
+  - {fileID: 2100000, guid: 970a0ae5296891a4393bbfc7c4419e60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4902,6 +4905,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661366756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661366749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebee87fe82061346b82ccf5e49f8fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  mouseSensitivity: 15
 --- !u!1001 &1663883853
 PrefabInstance:
   m_ObjectHideFlags: 0

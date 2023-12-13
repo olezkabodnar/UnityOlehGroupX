@@ -8,7 +8,7 @@ using UnityEngine;
 public class CharacterMoving : MonoBehaviour
 {
     public float moveSpeed = 5f;
-public float mouseSensitivity = 2f;
+    public float mouseSensitivity = 2f;
 
 private float rotationX;
 private float rotationY;
@@ -20,12 +20,13 @@ void Start()
 
 void Update()
 {
-    // move our camera forward, backward, left and right
+
     float moveX = Input.GetAxis("Horizontal");
     float moveZ = Input.GetAxis("Vertical");
+
     transform.position += new Vector3(moveX, 0f, moveZ) * moveSpeed * Time.deltaTime;
 
-    // rotate our camera
+ 
     float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
     float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
