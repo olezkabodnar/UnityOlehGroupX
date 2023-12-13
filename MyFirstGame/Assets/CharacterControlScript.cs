@@ -1,47 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CharacterControlScript : MonoBehaviour
 {
-    Vector3 velocity, acceleration;
+    public float speed = 0.3f;
+    public float mouseSensitivity = 3000000f;
 
-    float rateOfRotation = 180f;
-    // Start is called before the first frame update
+
+
     void Start()
     {
-       
+
     }
- 
-    // Update is called once per frame
+
+
+
+
+    
     void Update()
-
-    {  
-        acceleration = Vector3.zero;
-
-        if(Input.GetKey(KeyCode.W))
-        { acceleration = transform.forward; };
-
-        if (Input.GetKey(KeyCode.S))
-        { acceleration = -transform.forward; };
+    {
+        float rotationX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;//move mouse
+        float rotationY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        transform.Rotate(Vector3.up, rotationX);
+        transform.Rotate(Vector3.left, rotationY);
 
 
-        if (Input.GetKey(KeyCode.A))
-        { transform.Rotate(Vector3.up, rateOfRotation * Time.deltaTime); };
+        float moveHorizontal = Input.GetAxis("Horizontal");//move character
+        float moveVertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.D))
-        { transform.Rotate(Vector3.up, rateOfRotation * Time.deltaTime); };
-        transform.position += velocity * Time.deltaTime;
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        { transform.Rotate(Vector3.forward, rateOfRotation * Time.deltaTime); };
-
-        if (Input.GetKey(KeyCode.UpArrow))
-        { transform.Rotate(Vector3.right, rateOfRotation * Time.deltaTime); }
-
-        transform.position += velocity * Time.deltaTime;
-
-
-        velocity += acceleration * Time.deltaTime;
+        transform.position += movement * speed * Time.deltaTime;
     }
 }
